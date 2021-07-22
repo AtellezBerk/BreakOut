@@ -11,8 +11,8 @@ public class Ball extends Sprite{
     }
     private void initBall(){
 
-        xdir = 1;
-        ydir = -1;
+        xdir = 2;
+        ydir = -2;
 
         loadImage();
         getImageDimensions();
@@ -26,16 +26,16 @@ public class Ball extends Sprite{
 
     }
     void move(){
-        x += xdir;
-        y += ydir;
+        x += (xdir * 2);
+        y += (ydir * 2);
 
-        if (x == 0){
+        if (x <= 0){
             setXDir(1);
         }
-        if (x == Commons.WIDTH - imageWidth){
+        if (x >= Commons.WIDTH - imageWidth){
             setXDir(-1);
         }
-        if (y == 0){
+        if (y <= 0){
             setYDir(1);
         }
     }
